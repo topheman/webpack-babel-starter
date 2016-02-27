@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+<% if (!htmlWebpackPlugin.options.MODE_DEV_SERVER) { %><link href="<%= webpack.assetsByChunkName['assets/css/main'][1] %>" rel="stylesheet"><% } %></head>
+</head>
+<body>
+<% if (!htmlWebpackPlugin.options.MODE_DEV_SERVER) { %><script src="<%= webpack.assetsByChunkName['assets/js/bundle'] %>"><% } %></script>
+</body>
+</html>

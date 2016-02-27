@@ -19,12 +19,21 @@ log.info('webpack', 'Launched in ' + (MODE_DEV_SERVER ? 'dev-server' : 'build') 
 /** environment setup */
 
 const NODE_ENV = process.env.NODE_ENV ? process.env.NODE_ENV.toLowerCase() : 'development';
+const BUILD_DIR = process.env.BUILD_DIR || './build';
 const DEVTOOLS = process.env.DEVTOOLS ? JSON.parse(process.env.DEVTOOLS) : false;// can be useful in case you have web devtools
 const SOURCEMAPS = NODE_ENV !== 'production' || DEVTOOLS === true;
 const LINTER = process.env.LINTER ? JSON.parse(process.env.LINTER) : true;
 const FAIL_ON_ERROR = process.env.FAIL_ON_ERROR ? JSON.parse(process.env.FAIL_ON_ERROR) : !MODE_DEV_SERVER;// disabled on dev-server mode, enabled in build mode
 const OPTIMIZE = NODE_ENV === 'production' && DEVTOOLS !== true;
+const STATS = process.env.STATS ? JSON.parse(process.env.STATS) : false; // to output a stats.json file (from webpack at build - useful for debuging)
 const hash = (NODE_ENV === 'production' && DEVTOOLS ? '-devtools' : '') + (NODE_ENV === 'production' ? '-[hash]' : '');
+
+/** integrity checks */
+
+if (/.*(?!\/).$/.test(BUILD_DIR) === false) {
+  log.error('webpack', `BUILD_DIR should not contain trailing slashes - you passed "${BUILD_DIR}"`);
+  process.exit(1);
+}
 
 log.info('webpack', `${NODE_ENV.toUpperCase()} mode`);
 if (DEVTOOLS) {
@@ -46,14 +55,14 @@ if(!FAIL_ON_ERROR) {
   plugins.push(new webpack.NoErrorsPlugin());
 }
 
-//plugins.push(new HtmlWebpackPlugin({
-//  title: 'Topheman - rxjs-experiments',
-//  template: 'src/index.ejs', // Load a custom template
-//  inject: 'body' // Inject all scripts into the body
-//}));
-plugins.push(new HtmlWebpackPlugin());
+plugins.push(new HtmlWebpackPlugin({
+  title: 'Topheman - Webpack Babel Starter',
+  template: 'src/index.ejs', // Load a custom template
+  inject: MODE_DEV_SERVER, // inject scripts in dev-server mode - in build mode, use the template tags
+  MODE_DEV_SERVER: MODE_DEV_SERVER
+}));
 // extract css into one main.css file
-plugins.push(new ExtractTextPlugin(`css/main${hash}.css`, {
+plugins.push(new ExtractTextPlugin(`assets/css/main${hash}.css`, {
   disable: false,
   allChunks: true
 }));
@@ -84,6 +93,16 @@ if (MODE_DEV_SERVER) {
 else {
   // build mode
   log.info('webpackbuild', `rootdir: ${root}`);
+  if (STATS) {
+    //write infos about the build (to retrieve the hash) https://webpack.github.io/docs/long-term-caching.html#get-filenames-from-stats
+    plugins.push(function() {
+      this.plugin("done", function(stats) {
+        require("fs").writeFileSync(
+          path.join(__dirname, "build", "stats.json"),
+          JSON.stringify(stats.toJson()));
+      });
+    });
+  }
 }
 
 /** preloaders */
@@ -107,14 +126,14 @@ else {
 const config = {
   bail: FAIL_ON_ERROR,
   entry: {
-    'js/bundle': './src/bootstrap.js',
-    'css/main': './src/style/main.scss'
+    'assets/js/bundle': './src/bootstrap.js',
+    'assets/css/main': './src/style/main.scss'
   },
   output: {
     publicPath: '',
     filename: `[name]${hash}.js`,
-    chunkFilename: `js/[id]${hash}.chunk.js`,
-    path: './build/assets'
+    chunkFilename: `assets/js/[id]${hash}.chunk.js`,
+    path: BUILD_DIR
   },
   cache: true,
   debug: NODE_ENV === 'production' ? false : true,
