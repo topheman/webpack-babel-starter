@@ -8,7 +8,11 @@ log.level = 'silly';
 const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const common = require('./common');
 const plugins = [];
+
+const BANNER = common.getBanner();
+const BANNER_HTML = common.getBannerHtml();
 
 const root = __dirname;
 
@@ -59,13 +63,15 @@ plugins.push(new HtmlWebpackPlugin({
   title: 'Topheman - Webpack Babel Starter',
   template: 'src/index.ejs', // Load a custom template
   inject: MODE_DEV_SERVER, // inject scripts in dev-server mode - in build mode, use the template tags
-  MODE_DEV_SERVER: MODE_DEV_SERVER
+  MODE_DEV_SERVER: MODE_DEV_SERVER,
+  BANNER_HTML: BANNER_HTML
 }));
 // extract css into one main.css file
 plugins.push(new ExtractTextPlugin(`assets/css/main${hash}.css`, {
   disable: false,
   allChunks: true
 }));
+plugins.push(new webpack.BannerPlugin(BANNER));
 plugins.push(new webpack.DefinePlugin({
   // Lots of library source code (like React) are based on process.env.NODE_ENV
   // (all development related code is wrapped inside a conditional that can be dropped if equal to "production"

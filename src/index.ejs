@@ -8,4 +8,4 @@
 <body>
 <% if (!htmlWebpackPlugin.options.MODE_DEV_SERVER) { %><script src="<%= webpack.assetsByChunkName['assets/js/bundle'] %>"><% } %></script>
 </body>
-</html>
+</html><%= htmlWebpackPlugin.options.BANNER_HTML %>

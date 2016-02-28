@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Webpack Babel Starter Kit",
   "scripts": {
+    "start": "npm run webpack",
     "test": "npm run lint",
     "lint": "./node_modules/.bin/eslint src",
     "clean-build": "node ./bin/clean-build.js",
@@ -25,8 +26,10 @@
     "eslint-plugin-react": "^3.16.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
+    "git-rev-sync": "^1.4.0",
     "html-webpack-plugin": "^2.9.0",
     "json-loader": "^0.5.4",
+    "moment": "^2.11.2",
     "node-sass": "^3.4.2",
     "npmlog": "^2.0.2",
     "sass-loader": "^3.1.2",
