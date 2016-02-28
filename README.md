@@ -32,6 +32,8 @@ All the build tasks will create a built version of the project in the `./build` 
 * `npm run build`
 * `npm run build-prod` optimized / uglified version
 
+`npm run serve-build` will serve your `./build` folder at http://localhost:3000 so that you could test the built version you just made.
+
 ###Linter
 
 * eslint is running while you're developping, check your console for errors
