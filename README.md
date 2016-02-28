@@ -55,6 +55,10 @@ You can customize the behavior of the scripts by specifying environments vars:
 * `FAIL_ON_ERROR=true` will break the build if any errors occurs (useful for CIs such ase Travis - at `false` in dev-server, at `true` when building)
 * `LOCALHOST=false` to access via IP from other devices on the same network (ex: `LOCALHOST=false npm start` - default `true`)
 
+###Deploy
+
+* on github pages - [see wiki](https://github.com/topheman/webpack-babel-starter/wiki#deploy)
+
 ###Bonus
 
 Check the source code of the html/js/css generated files, you'll see a banner containing informations such as:
