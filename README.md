@@ -25,6 +25,8 @@ npm start
 
 Goto http://localhost:8080
 
+If you need to access from a remote device (such as a smartphone on the same network), just `LOCALHOST=false npm start` and your site will be accessible via your IP (which will be output on the terminal at launch).
+
 ###Build
 
 All the build tasks will create a built version of the project in the `./build` folder, cleaning it before making the build.
@@ -48,6 +50,7 @@ You can customize the behavior of the scripts by specifying environments vars:
 * `LINTER=false` will disable the linter (enabled by default, ex: `LINTER=false npm start`)
 * `STATS=true` will write `stats.json` profiling file on disk from webpack at build (disabled by default, ex: `STATS=true npm run build`)
 * `FAIL_ON_ERROR=true` will break the build if any errors occurs (useful for CIs such ase Travis - at `false` in dev-server, at `true` when building)
+* `LOCALHOST=false` to access via IP from other devices on the same network (ex: `LOCALHOST=false npm start` - default `true`)
 
 ###Bonus
 

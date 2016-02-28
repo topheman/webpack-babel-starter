@@ -8,6 +8,7 @@ log.level = 'silly';
 const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const myLocalIp = require('my-local-ip');
 const common = require('./common');
 const plugins = [];
 
@@ -30,6 +31,7 @@ const LINTER = process.env.LINTER ? JSON.parse(process.env.LINTER) : true;
 const FAIL_ON_ERROR = process.env.FAIL_ON_ERROR ? JSON.parse(process.env.FAIL_ON_ERROR) : !MODE_DEV_SERVER;// disabled on dev-server mode, enabled in build mode
 const OPTIMIZE = NODE_ENV === 'production' && DEVTOOLS !== true;
 const STATS = process.env.STATS ? JSON.parse(process.env.STATS) : false; // to output a stats.json file (from webpack at build - useful for debuging)
+const LOCALHOST = process.env.LOCALHOST ? JSON.parse(process.env.LOCALHOST) : true;
 const hash = (NODE_ENV === 'production' && DEVTOOLS ? '-devtools' : '') + (NODE_ENV === 'production' ? '-[hash]' : '');
 
 /** integrity checks */
@@ -94,7 +96,12 @@ if (OPTIMIZE) {
 
 if (MODE_DEV_SERVER) {
   // webpack-dev-server mode
-  log.info('webpack', 'Check http://localhost:8080');
+  if(LOCALHOST) {
+    log.info('webpack', 'Check http://localhost:8080');
+  }
+  else {
+    log.info('webpack', 'Check http://' + myLocalIp() + ':8080');
+  }
 }
 else {
   // build mode
@@ -144,6 +151,9 @@ const config = {
   cache: true,
   debug: NODE_ENV === 'production' ? false : true,
   devtool: SOURCEMAPS ? 'sourcemap' : false,
+  devServer: {
+    host: LOCALHOST ? 'localhost' : myLocalIp()
+  },
   module: {
     preLoaders: preLoaders,
     loaders: [
