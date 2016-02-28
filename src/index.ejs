@@ -6,6 +6,17 @@
 <% if (!htmlWebpackPlugin.options.MODE_DEV_SERVER) { %><link href="<%= webpack.assetsByChunkName['assets/css/main'][1] %>" rel="stylesheet"><% } %></head>
 </head>
 <body>
+<!-- feel free to remove the following - except the script tags at the end -->
+<span id="forkongithub"><a href="https://github.com/topheman/webpack-babel-starter">Fork me on GitHub</a></span>
+<h1>Webpack Babel Starter Kit</h1>
+<p>This is a webpack starter kit with full development & build workflow, more infos in the <a href="https://github.com/topheman/webpack-babel-starter#readme">readme</a>.</p>
+<footer>
+  <p><span id="copyright-year"></span><a href="http://labs.topheman.com/">labs.topheman.com</a> - Christophe Rosset</p>
+  <p>
+    <iframe width="78px" height="28px" title="Twitter Tweet Button" style="border:0;overflow:hidden;" scrolling="no" src="https://platform.twitter.com/widgets/tweet_button.html?count=none&amp;dnt=false&amp;lang=en&amp;original_referer=http%3A%2F%2Ftopheman.github.io%2Fwebpack-babel-starter%2F&amp;size=l&amp;text=%23Webpack%20%23Babel%20Starter%20Kit%20with%20full%20development%20%26%20build%20workflow&amp;type=share&amp;url=https%3A%2F%2Fgithub.com%2Ftopheman%2Fwebpack-babel-starter&amp;via=topheman" data-reactid=".0.2.0.6"></iframe>
+  </p>
+</footer>
+<!-- keep the following lines -->
 <% if (!htmlWebpackPlugin.options.MODE_DEV_SERVER) { %><script src="<%= webpack.assetsByChunkName['assets/js/bundle'] %>"><% } %></script>
 </body>
 </html><%= htmlWebpackPlugin.options.BANNER_HTML %>

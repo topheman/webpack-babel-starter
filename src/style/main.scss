@@ -1,3 +1,20 @@
-body {
-  background-color: yellow;
+$brand-primary: #900000;
+
+@import "github-ribbon";
+@import "footer";
+
+html {
+  font-family: Arial,sans-serif;
+}
+
+h1,
+h2,
+h3,
+h5,
+h6 {
+  color: $brand-primary;
+}
+
+a {
+  color: $brand-primary;
 }
