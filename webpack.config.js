@@ -26,10 +26,10 @@ log.info('webpack', 'Launched in ' + (MODE_DEV_SERVER ? 'dev-server' : 'build') 
 const NODE_ENV = process.env.NODE_ENV ? process.env.NODE_ENV.toLowerCase() : 'development';
 const BUILD_DIR = process.env.BUILD_DIR || './build';
 const DEVTOOLS = process.env.DEVTOOLS ? JSON.parse(process.env.DEVTOOLS) : false;// can be useful in case you have web devtools
-const SOURCEMAPS = NODE_ENV !== 'production' || DEVTOOLS === true;
+// optimize in production by default - otherwize, override with OPTIMIZE=false flag (if not optimized, sourcemaps will be generated)
+const OPTIMIZE = process.env.OPTIMIZE ? JSON.parse(process.env.OPTIMIZE) : NODE_ENV === 'production';
 const LINTER = process.env.LINTER ? JSON.parse(process.env.LINTER) : true;
 const FAIL_ON_ERROR = process.env.FAIL_ON_ERROR ? JSON.parse(process.env.FAIL_ON_ERROR) : !MODE_DEV_SERVER;// disabled on dev-server mode, enabled in build mode
-const OPTIMIZE = NODE_ENV === 'production' && DEVTOOLS !== true;
 const STATS = process.env.STATS ? JSON.parse(process.env.STATS) : false; // to output a stats.json file (from webpack at build - useful for debuging)
 const LOCALHOST = process.env.LOCALHOST ? JSON.parse(process.env.LOCALHOST) : true;
 const hash = (NODE_ENV === 'production' && DEVTOOLS ? '-devtools' : '') + (NODE_ENV === 'production' ? '-[hash]' : '');
@@ -45,7 +45,7 @@ log.info('webpack', `${NODE_ENV.toUpperCase()} mode`);
 if (DEVTOOLS) {
   log.info('webpack', 'DEVTOOLS active');
 }
-if (SOURCEMAPS) {
+if (!OPTIMIZE) {
   log.info('webpack', 'SOURCEMAPS activated');
 }
 if (FAIL_ON_ERROR) {
@@ -150,7 +150,7 @@ const config = {
   },
   cache: true,
   debug: NODE_ENV === 'production' ? false : true,
-  devtool: SOURCEMAPS ? 'sourcemap' : false,
+  devtool: OPTIMIZE ? false : 'sourcemap',
   devServer: {
     host: LOCALHOST ? 'localhost' : myLocalIp()
   },

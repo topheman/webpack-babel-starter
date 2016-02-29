@@ -18,7 +18,7 @@
   </p>
 </footer>
 <!-- keep the following lines -->
-<% if (!htmlWebpackPlugin.options.MODE_DEV_SERVER) { %><script src="<%= webpack.assetsByChunkName['assets/js/bundle'] %>"><% } %></script>
+<% if (!htmlWebpackPlugin.options.MODE_DEV_SERVER) { %><script src="<%= Object.prototype.toString.call(webpack.assetsByChunkName['assets/js/bundle']) === '[object Array]' ? webpack.assetsByChunkName['assets/js/bundle'][0] : webpack.assetsByChunkName['assets/js/bundle'] %>"><% } %></script>
 <!-- Google Analytics -->
 <script type="text/javascript">
   var _gaq = _gaq || [];
