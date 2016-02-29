@@ -11,6 +11,7 @@ What's in it:
 * [Babel](https://babeljs.io/) transpiler
 * [Eslint](http://eslint.org/) / [babel-eslint](https://github.com/babel/babel-eslint) / [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/eslint-config-airbnb-v5.0.1/packages/eslint-config-airbnb)
 * Sass support
+* Ship a version of your site with sourcemaps (see demo)
 
 ###Install
 
@@ -36,6 +37,9 @@ All the build tasks will create a built version of the project in the `./build` 
 
 * `npm run build`
 * `npm run build-prod` optimized / uglified version
+* `npm run build-prod-all` will build:
+	* production version (optimized / uglified)
+	* a debuggable version accessible at `/devtools` shipping all the sourcemaps, to ease sharing transpiled source code
 
 `npm run serve-build` will serve your `./build` folder at http://localhost:3000 so that you could test the built version you just made.
 
@@ -54,6 +58,7 @@ You can customize the behavior of the scripts by specifying environments vars:
 * `STATS=true` will write `stats.json` profiling file on disk from webpack at build (disabled by default, ex: `STATS=true npm run build`)
 * `FAIL_ON_ERROR=true` will break the build if any errors occurs (useful for CIs such ase Travis - at `false` in dev-server, at `true` when building)
 * `LOCALHOST=false` to access via IP from other devices on the same network (ex: `LOCALHOST=false npm start` - default `true`)
+* `DEVTOOLS`: By default at `null`. Used internally in `npm run build-prod-all` (you may not need that if you don't do OSS)
 
 ###Deploy
 

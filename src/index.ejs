@@ -11,6 +11,18 @@
 <span id="forkongithub"><a href="https://github.com/topheman/webpack-babel-starter">Fork me on GitHub</a></span>
 <h1>Webpack Babel Starter Kit</h1>
 <p>This is a webpack starter kit with full development & build workflow, more infos in the <a href="https://github.com/topheman/webpack-babel-starter#readme">readme</a>.</p>
+<% if (htmlWebpackPlugin.options.DEVTOOLS !== null) { %>
+<!-- This part will appear if you set DEVTOOLS=true or DEVTOOLS=false when launching an npm task -->
+  <% if (!htmlWebpackPlugin.options.DEVTOOLS) { %>
+  <p class="crop">
+    This starter kit lets you build a version containing all your sourcemaps, so that your visitors (potentials users/contributors)
+    may play directly with your sourcecode in ES6+ (by adding breakpoints ...). <a href="./devtools">Just click here to see the what's under the hood</a>.
+  </p>
+  <% } else { %>
+  <p class="crop">This is the <strong>Developer version</strong>, containing sourcemaps. <strong>Open your devtools and read/set breakpoints on the original source code!</strong></p>
+  <p><a href="../">Back to the production version</a></p>
+  <% } %>
+<% } %>
 <footer>
   <p><span id="copyright-year"></span><a href="http://labs.topheman.com/">labs.topheman.com</a> - Christophe Rosset</p>
   <p>

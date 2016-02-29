@@ -25,7 +25,7 @@ log.info('webpack', 'Launched in ' + (MODE_DEV_SERVER ? 'dev-server' : 'build') 
 
 const NODE_ENV = process.env.NODE_ENV ? process.env.NODE_ENV.toLowerCase() : 'development';
 const BUILD_DIR = process.env.BUILD_DIR || './build';
-const DEVTOOLS = process.env.DEVTOOLS ? JSON.parse(process.env.DEVTOOLS) : false;// can be useful in case you have web devtools
+const DEVTOOLS = process.env.DEVTOOLS ? JSON.parse(process.env.DEVTOOLS) : null;// can be useful in case you have web devtools (null by default to differentiate from true or false)
 // optimize in production by default - otherwize, override with OPTIMIZE=false flag (if not optimized, sourcemaps will be generated)
 const OPTIMIZE = process.env.OPTIMIZE ? JSON.parse(process.env.OPTIMIZE) : NODE_ENV === 'production';
 const LINTER = process.env.LINTER ? JSON.parse(process.env.LINTER) : true;
@@ -66,6 +66,7 @@ plugins.push(new HtmlWebpackPlugin({
   template: 'src/index.ejs', // Load a custom template
   inject: MODE_DEV_SERVER, // inject scripts in dev-server mode - in build mode, use the template tags
   MODE_DEV_SERVER: MODE_DEV_SERVER,
+  DEVTOOLS: DEVTOOLS,
   BANNER_HTML: BANNER_HTML
 }));
 // extract css into one main.css file

@@ -18,3 +18,9 @@ h6 {
 a {
   color: $brand-primary;
 }
+
+@media screen and (min-width:800px) {
+  p.crop {
+    width: 90%;
+  }
+}

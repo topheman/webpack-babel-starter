@@ -8,9 +8,12 @@
     "lint": "./node_modules/.bin/eslint src",
     "clean-build": "node ./bin/clean-build.js",
     "serve-build": "./node_modules/.bin/serve build",
-    "build": "npm run clean-build && ./node_modules/.bin/webpack --progress",
-    "build-prod": "npm run clean-build && NODE_ENV=production ./node_modules/.bin/webpack --progress -p",
-    "webpack": "./node_modules/.bin/webpack-dev-server --progress --colors --hot --inline"
+    "build": "npm run clean-build && npm run webpack-build",
+    "build-prod": "npm run clean-build && NODE_ENV=production npm run webpack-build-prod",
+    "build-prod-all": "DEVTOOLS=false npm run build-prod && NODE_ENV=production OPTIMIZE=false DEVTOOLS=true BUILD_DIR=./build/devtools npm run webpack-build",
+    "webpack": "./node_modules/.bin/webpack-dev-server --progress --colors --hot --inline",
+    "webpack-build": "./node_modules/.bin/webpack --progress",
+    "webpack-build-prod": "./node_modules/.bin/webpack --progress -p"
   },
   "pre-commit": [
     "test"
