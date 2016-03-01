@@ -3,8 +3,8 @@
  * 
  * Webpack Babel Starter Kit
  * 
- * @version v0.1.0 - 29/02/2016
- * @revision #9736bb4
+ * @version v0.1.0 - 02/03/2016
+ * @revision #a4af045
  * @author Christophe Rosset <tophe@topheman.com> (http://labs.topheman.com/)
  * @copyright 2016(c) Christophe Rosset <tophe@topheman.com> (http://labs.topheman.com/)
  * @license MIT
@@ -80,6 +80,16 @@ footer {
   border-top: 1px solid #E5E5E5;
 }
 
+/**
+ * Those logos are included by css instead of img tags to make an example of the url() shorthand
+ * that works like the url-loader, thanks to resolve-url-loader
+ */
+body {
+  background-image: url(/assets/images/80a1dc1809dbd4e3aba7736f08e0b602.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 html {
   font-family: Arial,sans-serif;
 }
@@ -96,10 +106,24 @@ a {
   color: #900000;
 }
 
+img.aligncenter {
+  display: block;
+  margin: 5px auto;
+}
+
+img.size-full {
+  height: auto;
+  max-width: 100%;
+}
+
 @media screen and (min-width: 800px) {
   p.crop {
     width: 90%;
   }
 }
 
-/*# sourceMappingURL=main-devtools-4520f6c68ca7c71c97f1.css.map*/
+.clearfix {
+  clear: both;
+}
+
+/*# sourceMappingURL=main-devtools-1eadae61441a4f6e0b19.css.map*/

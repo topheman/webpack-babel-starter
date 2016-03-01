@@ -3,8 +3,8 @@
  * 
  * Webpack Babel Starter Kit
  * 
- * @version v0.1.0 - 29/02/2016
- * @revision #9736bb4
+ * @version v0.1.0 - 02/03/2016
+ * @revision #a4af045
  * @author Christophe Rosset <tophe@topheman.com> (http://labs.topheman.com/)
  * @copyright 2016(c) Christophe Rosset <tophe@topheman.com> (http://labs.topheman.com/)
  * @license MIT
@@ -1296,4 +1296,4 @@
 
 /***/ }
 /******/ ]);
-//# sourceMappingURL=bundle-devtools-4520f6c68ca7c71c97f1.js.map
+//# sourceMappingURL=bundle-devtools-1eadae61441a4f6e0b19.js.map
