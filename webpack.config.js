@@ -179,7 +179,7 @@ const config = {
         loader: 'style-loader!css-loader'
       },
       {test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'file-loader' },
-      { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
+      { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=10&name=/assets/images/[hash].[ext]' }// warning: root relative path!
     ]
   },
   plugins: plugins,

@@ -1,0 +1,9 @@
+/**
+ * Those logos are included by css instead of img tags to make an example of the url() shorthand
+ * that works like the url-loader, thanks to resolve-url-loader
+ */
+body {
+  background-image: url('../images/npm-logo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}

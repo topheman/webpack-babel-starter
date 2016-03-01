@@ -1,7 +1,8 @@
-$brand-primary: #900000;
+@import "variables";
 
 @import "github-ribbon";
 @import "footer";
+@import "logos";
 
 html {
   font-family: Arial,sans-serif;
@@ -19,8 +20,23 @@ a {
   color: $brand-primary;
 }
 
+img.aligncenter {
+  display: block;
+  margin: 5px auto;
+}
+
+img.size-full {
+  height: auto;
+  max-width: 100%;
+}
+
 @media screen and (min-width:800px) {
   p.crop {
     width: 90%;
   }
 }
+
+.clearfix {
+  clear: both;
+}
+
