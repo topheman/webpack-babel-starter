@@ -33,7 +33,9 @@ If you need to access from a remote device (such as a smartphone on the same net
 
 ###Build
 
-All the build tasks will create a built version of the project in the `./build` folder, cleaning it before making the build.
+The `./build` directory is ignored by git, it will contain a `dist` directory which holds the distribution version of your website (the one that you will [ship once built](#deploy)).
+
+All the build tasks will create a built version of the project in the `./build/dist` folder, cleaning it before making the build.
 
 * `npm run build`
 * `npm run build-prod` optimized / uglified version
@@ -41,7 +43,7 @@ All the build tasks will create a built version of the project in the `./build` 
 	* production version (optimized / uglified)
 	* a debuggable version accessible at `/devtools` shipping all the sourcemaps, to ease sharing transpiled source code
 
-`npm run serve-build` will serve your `./build` folder at http://localhost:3000 so that you could test the built version you just made.
+`npm run serve-dist` will serve your `./build/dist` folder at [http://localhost:3000](http://localhost:3000) so that you could test the built version you just made.
 
 ###Linter
 
@@ -64,7 +66,7 @@ You can customize the behavior of the scripts by specifying environments vars:
 
 The main image loaders are declared in the webpack config so that when you `require('./foo.png')` or use the helper `url('./bar.gif')` in your `.scss` files, at build time, those images will automatically be:
 
-* copied into `/build/assets`
+* copied into `/build/dist/assets`
 * there name will be hashed (without you bothering with the reference in the generated code)
 * the hashed name will only change if the file changes (caching & git firendly)
 * I made sure that the css supports relative urls (this is why `main.css` lands at the same level as `index.html`)

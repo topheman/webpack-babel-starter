@@ -6,11 +6,11 @@ const ROOT_DIR = common.getRootDir();
 
 /** run */
 
-log.info('clean-build', `Cleaning ...`);
+log.info('clean-dist', `Cleaning ...`);
 const deleted = require('del').sync([
-  ROOT_DIR + '/build/*',
-  ROOT_DIR + '/build/**/*',
-  ROOT_DIR + '/build/!.git/**/*'
+  ROOT_DIR + '/build/dist/*',
+  ROOT_DIR + '/build/dist/**/*',
+  ROOT_DIR + '/build/dist/!.git/**/*'
 ]);
 deleted.forEach(function(e){
   console.log(e);
