@@ -3,8 +3,8 @@
  * 
  * Webpack Babel Starter Kit
  * 
- * @version v0.1.0 - 29/02/2016
- * @revision #9736bb4
+ * @version v0.1.0 - 03/03/2016
+ * @revision #ac2bf1e
  * @author Christophe Rosset <tophe@topheman.com> (http://labs.topheman.com/)
  * @copyright 2016(c) Christophe Rosset <tophe@topheman.com> (http://labs.topheman.com/)
  * @license MIT
@@ -89,7 +89,18 @@
 	
 	var main = function main() {
 	  console.log('Welcome! More infos at https://github.com/topheman/webpack-babel-starter');
+	  // the following is nothing extraordinary ... just to show that the requiring of images work (as well from sass and require / direct and inlined)
+	  var cssClasses = ['babel', 'npm', 'sass'];
+	  var current = 0;
 	  document.getElementById('copyright-year').innerHTML = '© ' + new Date().getFullYear() + ' ';
+	  document.querySelector('.logo').addEventListener('mouseover', function () {
+	    var body = document.getElementsByTagName('body')[0];
+	    cssClasses.forEach(function (name) {
+	      return body.classList.remove(name);
+	    });
+	    current = (current + 1) % 3;
+	    body.classList.add(cssClasses[current]);
+	  });
 	};
 	
 	main();
@@ -1296,4 +1307,4 @@
 
 /***/ }
 /******/ ]);
-//# sourceMappingURL=bundle-devtools-4520f6c68ca7c71c97f1.js.map
+//# sourceMappingURL=bundle-devtools-8ec6f01e631053f0376b.js.map

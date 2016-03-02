@@ -3,8 +3,8 @@
  * 
  * Webpack Babel Starter Kit
  * 
- * @version v0.1.0 - 29/02/2016
- * @revision #9736bb4
+ * @version v0.1.0 - 03/03/2016
+ * @revision #ac2bf1e
  * @author Christophe Rosset <tophe@topheman.com> (http://labs.topheman.com/)
  * @copyright 2016(c) Christophe Rosset <tophe@topheman.com> (http://labs.topheman.com/)
  * @license MIT
@@ -80,6 +80,29 @@ footer {
   border-top: 1px solid #E5E5E5;
 }
 
+/**
+ * Those logos are included by css instead of img tags to make an example of the url() shorthand
+ * The images / assets will be automatically included at build time - inlined if <5kb to gain on http requests
+ */
+body {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body.babel {
+  background-image: url(assets/9749ad03c1a39d7f891506252ac948f1.png);
+}
+
+body.npm {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAi0AAAEuAgMAAAA/+8rSAAAACVBMVEUAAADLODf///8EXxL6AAAAAXRSTlMAQObYZgAAAPxJREFUeAHt2MUBAjEUQEG0PrxKtAT6oQP8hrPuO++a5P85p9upUDAwMM3CwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMB052UzDnsYGBgYmJyDgYGBgYGBgYGBWQRcv61S3QlWwMDAwMDAwMDAFIqBgYGBgYF53huOAxaddgF3guc0HwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA/OzqmNgYGBgYGBgYGBgYGBgYGCCC/iFSB0MDAwMDAwMDAwMDAwMDExumCgFgjMywcDAwMDAwMDAwMDAwMDAlISJEQwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMzB2Z3/eJrjiMpQAAAABJRU5ErkJggg==);
+  background-size: 30%;
+}
+
+body.sass {
+  background-image: url(assets/14ce879b081c67c0faf107ec8f8af9e2.png);
+  background-size: 40%;
+}
+
 html {
   font-family: Arial,sans-serif;
 }
@@ -96,10 +119,32 @@ a {
   color: #900000;
 }
 
+img.aligncenter {
+  display: block;
+  margin: 5px auto;
+}
+
+img.size-full {
+  height: auto;
+  max-width: 100%;
+}
+
 @media screen and (min-width: 800px) {
   p.crop {
     width: 90%;
   }
 }
 
-/*# sourceMappingURL=main-devtools-4520f6c68ca7c71c97f1.css.map*/
+.clearfix {
+  clear: both;
+}
+
+img.logo {
+  transition: opacity 0.5s;
+}
+
+img.logo:hover {
+  opacity: 0.4;
+}
+
+/*# sourceMappingURL=main-devtools-8ec6f01e631053f0376b.css.map*/
