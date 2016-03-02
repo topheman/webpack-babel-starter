@@ -28,6 +28,13 @@
     "Starter Kit"
   ],
   "author": "Christophe Rosset <tophe@topheman.com> (http://labs.topheman.com/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/topheman/webpack-babel-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/topheman/webpack-babel-starter/issues"
+  },
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.5.2",
