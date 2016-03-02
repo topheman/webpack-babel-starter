@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
   <title><%= htmlWebpackPlugin.options.title %></title>
-<% if (!htmlWebpackPlugin.options.MODE_DEV_SERVER) { %><link href="<%= webpack.assetsByChunkName['assets/css/main'][1] %>" rel="stylesheet"><% } %></head>
+<% if (!htmlWebpackPlugin.options.MODE_DEV_SERVER) { %><link href="<%= webpack.assetsByChunkName['main'][1] %>" rel="stylesheet"><% } %></head>
 </head>
-<body>
+<body class="babel">
 <!-- feel free to remove the following - except the script tags at the end -->
 <span id="forkongithub"><a href="https://github.com/topheman/webpack-babel-starter">Fork me on GitHub</a></span>
 <h1>Webpack Babel Starter Kit</h1>
@@ -24,7 +24,7 @@
   <% } %>
 <% } %>
 <p>
-  <img class="size-full aligncenter" src="<%= require('./images/webpack-logo.png') %>"/>
+  <img class="size-full aligncenter" src="<%= require('./assets/images/webpack-logo.png') %>"/>
 </p>
 <footer>
   <p><span id="copyright-year"></span><a href="http://labs.topheman.com/">labs.topheman.com</a> - Christophe Rosset</p>
@@ -33,7 +33,7 @@
   </p>
 </footer>
 <!-- keep the following lines -->
-<% if (!htmlWebpackPlugin.options.MODE_DEV_SERVER) { %><script src="<%= Object.prototype.toString.call(webpack.assetsByChunkName['assets/js/bundle']) === '[object Array]' ? webpack.assetsByChunkName['assets/js/bundle'][0] : webpack.assetsByChunkName['assets/js/bundle'] %>"><% } %></script>
+<% if (!htmlWebpackPlugin.options.MODE_DEV_SERVER) { %><script src="<%= Object.prototype.toString.call(webpack.assetsByChunkName['bundle']) === '[object Array]' ? webpack.assetsByChunkName['bundle'][0] : webpack.assetsByChunkName['bundle'] %>"><% } %></script>
 <!-- Google Analytics -->
 <script type="text/javascript">
   var _gaq = _gaq || [];

@@ -1,9 +1,18 @@
 /**
  * Those logos are included by css instead of img tags to make an example of the url() shorthand
- * that works like the url-loader, thanks to resolve-url-loader
+ * The images / assets will be automatically included at build time - inlined if <5kb to gain on http requests
  */
 body {
-  background-image: url('../images/npm-logo.png');
   background-repeat: no-repeat;
   background-position: center;
+}
+body.babel {
+  background-image: url('../assets/images/babel-logo.png');
+}
+body.npm {
+  background-image: url('../assets/images/npm-logo.png');
+  background-size: contain;
+}
+body.sass {
+  background-image: url('../assets/images/sass-logo.png');
 }

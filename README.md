@@ -60,6 +60,15 @@ You can customize the behavior of the scripts by specifying environments vars:
 * `LOCALHOST=false` to access via IP from other devices on the same network (ex: `LOCALHOST=false npm start` - default `true`)
 * `DEVTOOLS`: By default at `null`. Used internally in `npm run build-prod-all` (you may not need that if you don't do OSS)
 
+###Assets
+
+The main image loaders are declared in the webpack config so that when you `require('./foo.png')` or use the helper `url('./bar.gif')` in your `.scss` files, at build time, those images will automatically be:
+
+* copied into `/build/assets`
+* there name will be hashed (without you bothering with the reference in the generated code)
+* the hashed name will only change if the file changes (caching & git firendly)
+* I made sure that the css supports relative urls (this is why `main.css` lands at the same level as `index.html`)
+
 ###Deploy
 
 * on github pages - [see wiki](https://github.com/topheman/webpack-babel-starter/wiki#deploy)

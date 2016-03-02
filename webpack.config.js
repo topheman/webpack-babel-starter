@@ -70,7 +70,7 @@ plugins.push(new HtmlWebpackPlugin({
   BANNER_HTML: BANNER_HTML
 }));
 // extract css into one main.css file
-plugins.push(new ExtractTextPlugin(`assets/css/main${hash}.css`, {
+plugins.push(new ExtractTextPlugin(`main${hash}.css`, {
   disable: false,
   allChunks: true
 }));
@@ -140,13 +140,13 @@ else {
 const config = {
   bail: FAIL_ON_ERROR,
   entry: {
-    'assets/js/bundle': './src/bootstrap.js',
-    'assets/css/main': './src/style/main.scss'
+    'bundle': './src/bootstrap.js',
+    'main': './src/style/main.scss'
   },
   output: {
     publicPath: '',
     filename: `[name]${hash}.js`,
-    chunkFilename: `assets/js/[id]${hash}.chunk.js`,
+    chunkFilename: `[id]${hash}.chunk.js`,
     path: BUILD_DIR
   },
   cache: true,
@@ -168,18 +168,18 @@ const config = {
         loader: 'json-loader'
       },
       {
-        test: /\.scss/,
+        test: /\.scss$/,
         loader: ExtractTextPlugin.extract('style-loader',
           'css-loader?sourceMap!sass-loader?sourceMap=true&sourceMapContents=true&outputStyle=expanded&' +
           'includePaths[]=' + (path.resolve(__dirname, './node_modules'))
         )
       },
       {
-        test: /\.css/,
+        test: /\.css$/,
         loader: 'style-loader!css-loader'
       },
-      {test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'file-loader' },
-      { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=10&name=/assets/images/[hash].[ext]' }// warning: root relative path!
+      { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url-loader?limit=5000&name=assets/[hash].[ext]' },// @todo fix svg
+      { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=5000&name=assets/[hash].[ext]' }
     ]
   },
   plugins: plugins,
