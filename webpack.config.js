@@ -32,6 +32,7 @@ const LINTER = process.env.LINTER ? JSON.parse(process.env.LINTER) : true;
 const FAIL_ON_ERROR = process.env.FAIL_ON_ERROR ? JSON.parse(process.env.FAIL_ON_ERROR) : !MODE_DEV_SERVER;// disabled on dev-server mode, enabled in build mode
 const STATS = process.env.STATS ? JSON.parse(process.env.STATS) : false; // to output a stats.json file (from webpack at build - useful for debuging)
 const LOCALHOST = process.env.LOCALHOST ? JSON.parse(process.env.LOCALHOST) : true;
+const ASSETS_LIMIT = typeof process.env.ASSETS_LIMIT !== 'undefined' ? parseInt(process.env.ASSETS_LIMIT, 10) : 5000;// limit bellow the assets will be inlines
 const hash = (NODE_ENV === 'production' && DEVTOOLS ? '-devtools' : '') + (NODE_ENV === 'production' ? '-[hash]' : '');
 
 /** integrity checks */
@@ -178,8 +179,12 @@ const config = {
         test: /\.css$/,
         loader: 'style-loader!css-loader'
       },
-      { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url-loader?limit=5000&name=assets/[hash].[ext]' },// @todo fix svg
-      { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=5000&name=assets/[hash].[ext]' }
+      { test: /\.(png)$/, loader: 'url-loader?limit=' + ASSETS_LIMIT + '&name=assets/[hash].[ext]' },
+      { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=' + ASSETS_LIMIT + '&mimetype=application/font-woff&name=assets/[hash].[ext]' },
+      { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=' + ASSETS_LIMIT + '&mimetype=application/font-woff&name=assets/[hash].[ext]' },
+      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=' + ASSETS_LIMIT + '&mimetype=application/octet-stream&name=assets/[hash].[ext]' },
+      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file?&name=assets/[hash].[ext]' },
+      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=' + ASSETS_LIMIT + '&mimetype=image/svg+xml&&name=assets/[hash].[ext]' }
     ]
   },
   plugins: plugins,

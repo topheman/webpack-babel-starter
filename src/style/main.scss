@@ -40,3 +40,10 @@ img.size-full {
   clear: both;
 }
 
+img.logo {
+  transition: opacity 0.5s;
+}
+
+img.logo:hover {
+  opacity: 0.4;
+}
