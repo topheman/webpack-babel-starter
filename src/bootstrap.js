@@ -13,6 +13,11 @@ if (process.env.NODE_ENV !== 'production') {
     console.info('Linter active, if you meet some problems, you can still run without linter, just set the env var LINTER=false.');
   }
 }
+else {
+  if (process.env.DEVTOOLS) {
+    console.info('Turn on the "Sources" tab of your devtools to inspect original source code - thanks to sourcemaps!');
+  }
+}
 
 /**
  * You could setup some mocks for tests
@@ -22,7 +27,7 @@ if (process.env.NODE_ENV === 'mock') {
   console.info('MOCK mode');
 }
 
-if (process.env.DEVTOOLS) {
+if (process.env.DEVTOOLS && process.env.NODE_ENV !== 'production') {
   console.info(`You're on DEVTOOLS mode, you may have access to tools enhancing developer experience - off to you to choose to disable them in production ...`);
 }
 

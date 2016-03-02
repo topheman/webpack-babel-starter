@@ -27,7 +27,7 @@ npm install
 npm start
 ```
 
-Goto http://localhost:8080
+Goto [http://localhost:8080](http://localhost:8080)
 
 If you need to access from a remote device (such as a smartphone on the same network), just `LOCALHOST=false npm start` and your site will be accessible via your IP (which will be output on the terminal at launch).
 
