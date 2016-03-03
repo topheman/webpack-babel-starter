@@ -30,20 +30,18 @@ img.size-full {
   max-width: 100%;
 }
 
-@media screen and (min-width:800px) {
+@media screen and (min-width:$break-point) {
   p.crop {
     width: 90%;
+  }
+  img.logo {
+    transition: opacity 0.5s;
+  }
+  img.logo:hover {
+    opacity: 0.4;
   }
 }
 
 .clearfix {
   clear: both;
-}
-
-img.logo {
-  transition: opacity 0.5s;
-}
-
-img.logo:hover {
-  opacity: 0.4;
 }

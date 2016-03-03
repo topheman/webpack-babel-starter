@@ -2,18 +2,22 @@
  * Those logos are included by css instead of img tags to make an example of the url() shorthand
  * The images / assets will be automatically included at build time - inlined if <5kb to gain on http requests
  */
-body {
-  background-repeat: no-repeat;
-  background-position: center;
-}
-body.babel {
-  background-image: url('../assets/images/babel-logo.png');
-}
-body.npm {
-  background-image: url('../assets/images/npm-logo.png');
-  background-size: 30%;
-}
-body.sass {
-  background-image: url('../assets/images/sass-logo.png');
-  background-size: 40%;
+@media screen and (min-width:$break-point) {
+  body {
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background 0.5s;
+  }
+  body.babel {
+    background-image: url('../assets/images/babel-logo.png');
+    background-size: 45%;
+  }
+  body.npm {
+    background-image: url('../assets/images/npm-logo.png');
+    background-size: 30%;
+  }
+  body.sass {
+    background-image: url('../assets/images/sass-logo.png');
+    background-size: 40%;
+  }
 }
