@@ -4,7 +4,7 @@
  * Webpack Babel Starter Kit
  * 
  * @version v0.1.0 - 03/03/2016
- * @revision #a342f48 - https://github.com/topheman/webpack-babel-starter/tree/a342f48f4e50a7685e2db7bb10c61c3406f90418
+ * @revision #9d260d8 - https://github.com/topheman/webpack-babel-starter/tree/9d260d86ed1dcf86ce97bda709706ef4156a396a
  * @author Christophe Rosset <tophe@topheman.com> (http://labs.topheman.com/)
  * @copyright 2016(c) Christophe Rosset <tophe@topheman.com> (http://labs.topheman.com/)
  * @license MIT
@@ -84,23 +84,24 @@ footer {
  * Those logos are included by css instead of img tags to make an example of the url() shorthand
  * The images / assets will be automatically included at build time - inlined if <5kb to gain on http requests
  */
-body {
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-body.babel {
-  background-image: url(assets/9749ad03c1a39d7f891506252ac948f1.png);
-}
-
-body.npm {
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAi0AAAEuAgMAAAA/+8rSAAAACVBMVEUAAADLODf///8EXxL6AAAAAXRSTlMAQObYZgAAAPxJREFUeAHt2MUBAjEUQEG0PrxKtAT6oQP8hrPuO++a5P85p9upUDAwMM3CwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMB052UzDnsYGBgYmJyDgYGBgYGBgYGBWQRcv61S3QlWwMDAwMDAwMDAFIqBgYGBgYF53huOAxaddgF3guc0HwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA/OzqmNgYGBgYGBgYGBgYGBgYGCCC/iFSB0MDAwMDAwMDAwMDAwMDExumCgFgjMywcDAwMDAwMDAwMDAwMDAlISJEQwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMzB2Z3/eJrjiMpQAAAABJRU5ErkJggg==);
-  background-size: 30%;
-}
-
-body.sass {
-  background-image: url(assets/14ce879b081c67c0faf107ec8f8af9e2.png);
-  background-size: 40%;
+@media screen and (min-width: 800px) {
+  body {
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background 0.5s;
+  }
+  body.babel {
+    background-image: url(assets/9749ad03c1a39d7f891506252ac948f1.png);
+    background-size: 45%;
+  }
+  body.npm {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAi0AAAEuAgMAAAA/+8rSAAAACVBMVEUAAADLODf///8EXxL6AAAAAXRSTlMAQObYZgAAAPxJREFUeAHt2MUBAjEUQEG0PrxKtAT6oQP8hrPuO++a5P85p9upUDAwMM3CwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMB052UzDnsYGBgYmJyDgYGBgYGBgYGBWQRcv61S3QlWwMDAwMDAwMDAFIqBgYGBgYF53huOAxaddgF3guc0HwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA/OzqmNgYGBgYGBgYGBgYGBgYGCCC/iFSB0MDAwMDAwMDAwMDAwMDExumCgFgjMywcDAwMDAwMDAwMDAwMDAlISJEQwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMzB2Z3/eJrjiMpQAAAABJRU5ErkJggg==);
+    background-size: 30%;
+  }
+  body.sass {
+    background-image: url(assets/14ce879b081c67c0faf107ec8f8af9e2.png);
+    background-size: 40%;
+  }
 }
 
 html {
@@ -133,18 +134,16 @@ img.size-full {
   p.crop {
     width: 90%;
   }
+  img.logo {
+    transition: opacity 0.5s;
+  }
+  img.logo:hover {
+    opacity: 0.4;
+  }
 }
 
 .clearfix {
   clear: both;
 }
 
-img.logo {
-  transition: opacity 0.5s;
-}
-
-img.logo:hover {
-  opacity: 0.4;
-}
-
-/*# sourceMappingURL=main-devtools-f883be3f628a69bb7ffe.css.map*/
+/*# sourceMappingURL=main-devtools-b74106b3cba04d403b5a.css.map*/
