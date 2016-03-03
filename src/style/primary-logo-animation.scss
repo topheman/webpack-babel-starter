@@ -1,0 +1,51 @@
+span.test-require-ensure {
+  cursor: pointer;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
+  user-select: none;
+  font-weight: bold;
+  color: $brand-primary;
+}
+
+@keyframes active-link {
+  from {
+    background-color: white;
+    color: $brand-primary;
+  }
+
+  50% {
+    background-color: $brand-primary;
+    color: white;
+  }
+
+  to {
+    background-color: white;
+    color: $brand-primary;
+  }
+}
+
+span.test-require-ensure.active {
+  animation-duration: 2s;
+  animation-name: active-link;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes rotate-logo {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+img.logo.rotate {
+  animation-duration: 2s;
+  animation-name: rotate-logo;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
