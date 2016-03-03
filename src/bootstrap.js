@@ -36,15 +36,17 @@ if (process.env.DEVTOOLS && process.env.NODE_ENV !== 'production') {
 const main = () => {
   console.log('Welcome! More infos at https://github.com/topheman/webpack-babel-starter');
   // the following is nothing extraordinary ... just to show that the requiring of images work (as well from sass and require / direct and inlined)
-  const cssClasses = ['babel', 'npm', 'sass'];
-  let current = 0;
-  document.getElementById('copyright-year').innerHTML = `© ${(new Date()).getFullYear()} `;
-  document.querySelector('.logo').addEventListener('mouseover', () => {
-    const body = document.getElementsByTagName('body')[0];
-    cssClasses.forEach(name => body.classList.remove(name));
-    current = (current + 1) % 3;
-    body.classList.add(cssClasses[current]);
-  });
+  if (global.document && global.document.querySelector) {
+    const cssClasses = ['babel', 'npm', 'eslint', 'sass'];
+    let current = 0;
+    document.getElementById('copyright-year').innerHTML = `© ${(new Date()).getFullYear()} `;
+    document.querySelector('.logo').addEventListener('mouseover', () => {
+      const body = document.getElementsByTagName('body')[0];
+      cssClasses.forEach(name => body.classList.remove(name));
+      current = (current + 1) % cssClasses.length;
+      body.classList.add(cssClasses[current]);
+    });
+  }
 };
 
 main();
