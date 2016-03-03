@@ -4,7 +4,7 @@
  * Webpack Babel Starter Kit
  * 
  * @version v0.1.0 - 03/03/2016
- * @revision #9d260d8 - https://github.com/topheman/webpack-babel-starter/tree/9d260d86ed1dcf86ce97bda709706ef4156a396a
+ * @revision #ee7ec03 - https://github.com/topheman/webpack-babel-starter/tree/ee7ec03c80880bbcfca9d2aeb2a6067e41a52b52
  * @author Christophe Rosset <tophe@topheman.com> (http://labs.topheman.com/)
  * @copyright 2016(c) Christophe Rosset <tophe@topheman.com> (http://labs.topheman.com/)
  * @license MIT
@@ -56,7 +56,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(console) {'use strict';
+	/* WEBPACK VAR INJECTION */(function(console, global) {'use strict';
 	
 	/* eslint-disable max-len */
 	/** This is how you use the environments variables passed by the webpack.DefinePlugin **/
@@ -94,21 +94,25 @@
 	var main = function main() {
 	  console.log('Welcome! More infos at https://github.com/topheman/webpack-babel-starter');
 	  // the following is nothing extraordinary ... just to show that the requiring of images work (as well from sass and require / direct and inlined)
-	  var cssClasses = ['babel', 'npm', 'sass'];
-	  var current = 0;
-	  document.getElementById('copyright-year').innerHTML = '© ' + new Date().getFullYear() + ' ';
-	  document.querySelector('.logo').addEventListener('mouseover', function () {
-	    var body = document.getElementsByTagName('body')[0];
-	    cssClasses.forEach(function (name) {
-	      return body.classList.remove(name);
-	    });
-	    current = (current + 1) % 3;
-	    body.classList.add(cssClasses[current]);
-	  });
+	  if (global.document && global.document.querySelector) {
+	    (function () {
+	      var cssClasses = ['babel', 'npm', 'eslint', 'sass'];
+	      var current = 0;
+	      document.getElementById('copyright-year').innerHTML = '© ' + new Date().getFullYear() + ' ';
+	      document.querySelector('.logo').addEventListener('mouseover', function () {
+	        var body = document.getElementsByTagName('body')[0];
+	        cssClasses.forEach(function (name) {
+	          return body.classList.remove(name);
+	        });
+	        current = (current + 1) % cssClasses.length;
+	        body.classList.add(cssClasses[current]);
+	      });
+	    })();
+	  }
 	};
 	
 	main();
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), (function() { return this; }())))
 
 /***/ },
 /* 1 */
@@ -1311,4 +1315,4 @@
 
 /***/ }
 /******/ ]);
-//# sourceMappingURL=bundle-devtools-b74106b3cba04d403b5a.js.map
+//# sourceMappingURL=bundle-devtools-5f45ddcbc006cf221f0d.js.map
