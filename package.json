@@ -12,9 +12,11 @@
     "build": "npm run clean-dist && npm run webpack-build",
     "build-prod": "npm run clean-dist && NODE_ENV=production npm run webpack-build-prod",
     "build-prod-all": "DEVTOOLS=false npm run build-prod && NODE_ENV=production OPTIMIZE=false DEVTOOLS=true DIST_DIR=dist/devtools npm run webpack-build",
+    "postbuild-prod-all": "npm run generate-dist-readme",
     "webpack": "./node_modules/.bin/webpack-dev-server --progress --colors --hot --inline",
     "webpack-build": "./node_modules/.bin/webpack --progress",
-    "webpack-build-prod": "./node_modules/.bin/webpack --progress -p"
+    "webpack-build-prod": "./node_modules/.bin/webpack --progress -p",
+    "generate-dist-readme": "node bin/generate-dist-readme.js"
   },
   "pre-commit": [
     "test"
@@ -52,6 +54,7 @@
     "git-rev-sync": "^1.4.0",
     "html-webpack-plugin": "^2.9.0",
     "json-loader": "^0.5.4",
+    "lodash.template": "^4.2.2",
     "moment": "^2.11.2",
     "my-local-ip": "^1.0.0",
     "node-sass": "^3.4.2",
