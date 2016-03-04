@@ -3,8 +3,8 @@
  * 
  * Webpack Babel Starter Kit
  * 
- * @version v0.1.0 - 03/03/2016
- * @revision #ee7ec03 - https://github.com/topheman/webpack-babel-starter/tree/ee7ec03c80880bbcfca9d2aeb2a6067e41a52b52
+ * @version v0.1.0 - 04/03/2016
+ * @revision #8b6e9a6 - https://github.com/topheman/webpack-babel-starter/tree/8b6e9a6d59b332c910bb1856ac034c476a844bbe
  * @author Christophe Rosset <tophe@topheman.com> (http://labs.topheman.com/)
  * @copyright 2016(c) Christophe Rosset <tophe@topheman.com> (http://labs.topheman.com/)
  * @license MIT
@@ -108,6 +108,61 @@ footer {
   }
 }
 
+span.test-require-ensure {
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -khtml-user-select: none;
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE/Edge */
+  user-select: none;
+  font-weight: bold;
+  color: #900000;
+}
+
+@keyframes active-link {
+  from {
+    background-color: white;
+    color: #900000;
+  }
+  50% {
+    background-color: #900000;
+    color: white;
+  }
+  to {
+    background-color: white;
+    color: #900000;
+  }
+}
+
+span.test-require-ensure.active {
+  animation-duration: 2s;
+  animation-name: active-link;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes rotate-logo {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+img.logo.rotate {
+  animation-duration: 2s;
+  animation-name: rotate-logo;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
 html {
   font-family: Arial,sans-serif;
 }
@@ -150,4 +205,12 @@ img.size-full {
   clear: both;
 }
 
-/*# sourceMappingURL=main-devtools-5f45ddcbc006cf221f0d.css.map*/
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+
+/*# sourceMappingURL=main-devtools-a877fccfa7c9e544a4ab.css.map*/
