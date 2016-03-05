@@ -16,7 +16,9 @@
     "webpack": "./node_modules/.bin/webpack-dev-server --progress --colors --hot --inline",
     "webpack-build": "./node_modules/.bin/webpack --progress",
     "webpack-build-prod": "./node_modules/.bin/webpack --progress -p",
-    "generate-dist-readme": "node bin/generate-dist-readme.js"
+    "generate-dist-readme": "node bin/generate-dist-readme.js",
+    "contributing-install": "./contributing/bin/contributing-install.sh",
+    "contributing-test": "./contributing/bin/contributing-test.sh"
   },
   "pre-commit": [
     "test"
@@ -27,7 +29,8 @@
     "ES6",
     "Sass",
     "Eslint",
-    "Starter Kit"
+    "Starter Kit",
+    "boilerplate"
   ],
   "author": "Christophe Rosset <tophe@topheman.com> (http://labs.topheman.com/)",
   "repository": {

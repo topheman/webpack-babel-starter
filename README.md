@@ -5,7 +5,7 @@ Webpack Babel Starter
 
 A webpack starter kit with full development & build workflow, inspired by [topheman/react-es6-redux](https://github.com/topheman/react-es6-redux).
 
-What's in it:
+What's in this boilerplate:
 
 * Development / Build / Lint tasks
 * [Babel](https://babeljs.io/) transpiler
@@ -71,9 +71,10 @@ The main image loaders are declared in the webpack config so that when you `requ
 * the hashed name will only change if the file changes (caching & git firendly)
 * I made sure that the css supports relative urls (this is why `main.css` lands at the same level as `index.html`)
 
-###Deploy
+###FAQ / Deploy
 
-* on github pages - [see wiki](https://github.com/topheman/webpack-babel-starter/wiki#deploy)
+* deploy on github pages - [see wiki](https://github.com/topheman/webpack-babel-starter/wiki#deploy)
+* a problem ? Checkout the [FAQ](https://github.com/topheman/webpack-babel-starter/wiki#faq)
 
 ###Bonus
 
@@ -82,6 +83,12 @@ Check the source code of the html/js/css generated files, you'll see a banner co
 * date the build was made
 * version
 * git revision / link to this revision on github
+
+###Contributing
+
+PRs are welcome, just keep in mind this boilerplate aims to keep beeing framework agnostic.
+
+Everything related to contributing (tests, framework dependencies ...) is located in the [/contributing](https://github.com/topheman/webpack-babel-starter/tree/master/contributing) folder. Check the readme in their to see how to setup your workspace.
 
 Copyright 2016 © Christophe Rosset
 

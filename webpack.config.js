@@ -114,7 +114,7 @@ else {
     plugins.push(function() {
       this.plugin("done", function(stats) {
         require("fs").writeFileSync(
-          path.join(__dirname, "build", "stats.json"),
+          path.join(__dirname, BUILD_DIR, DIST_DIR, "stats.json"),
           JSON.stringify(stats.toJson()));
       });
     });
