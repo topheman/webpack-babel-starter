@@ -3,8 +3,8 @@ node_js:
   - "4"
   - "5"
 before_script:
-  - npm run contributing-install #remove this line if you're not contributing - https://github.com/topheman/webpack-babel-starter/tree/master/contributing
   - npm ls --depth=0
+  - npm run contributing-install #remove this line if you're not contributing - https://github.com/topheman/webpack-babel-starter/tree/master/contributing
 script:
   - npm test
   - npm run contributing-test #remove this line if you're not contributing - https://github.com/topheman/webpack-babel-starter/tree/master/contributing
