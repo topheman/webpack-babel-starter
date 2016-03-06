@@ -23,3 +23,5 @@ You can disable the generation of this file by removing the following line in th
 ```js
 "postbuild-prod-all": "npm run generate-dist-readme"
 ```
+
+You can customize the output of this file, the template is located at `bin/README.dist.template.md`.

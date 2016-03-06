@@ -33,7 +33,7 @@ If you need to access from a remote device (such as a smartphone on the same net
 
 ###Build
 
-The `./build` directory is ignored by git, it will contain a `dist` directory which holds the distribution version of your website (the one that you will [ship once built](#deploy)).
+The `./build` directory is ignored by git, it will contain a `dist` directory which holds the distribution version of your website (the one that you will [ship once built](https://github.com/topheman/webpack-babel-starter/wiki#deploy)).
 
 All the build tasks will create a built version of the project in the `./build/dist` folder, cleaning it before making the build.
 
@@ -58,9 +58,9 @@ You can customize the behavior of the scripts by specifying environments vars:
 * `NODE_ENV` by default at `development`, `NODE_ENV=production` when you `npm run build-prod`
 * `LINTER=false` will disable the linter (enabled by default, ex: `LINTER=false npm start`)
 * `STATS=true` will write `stats.json` profiling file on disk from webpack at build (disabled by default, ex: `STATS=true npm run build`)
-* `FAIL_ON_ERROR=true` will break the build if any errors occurs (useful for CIs such ase Travis - at `false` in dev-server, at `true` when building)
+* `FAIL_ON_ERROR=true` will break the build if any errors occurs (useful for CIs such as travis - at `false` in dev-server, at `true` when building)
 * `LOCALHOST=false` to access via IP from other devices on the same network (ex: `LOCALHOST=false npm start` - default `true`)
-* `DEVTOOLS`: By default at `null`. Used internally in `npm run build-prod-all` (you may not need that if you don't do OSS)
+* `DEVTOOLS`: By default at `null`. Used internally by `npm run build-prod-all` (you may not need that if you don't do OSS)
 
 ###Assets
 
@@ -68,7 +68,7 @@ The main image loaders are declared in the webpack config so that when you `requ
 
 * copied into `/build/dist/assets`
 * there name will be hashed (without you bothering with the reference in the generated code)
-* the hashed name will only change if the file changes (caching & git firendly)
+* the hashed name will only change if the file changes (caching & git friendly)
 * I made sure that the css supports relative urls (this is why `main.css` lands at the same level as `index.html`)
 
 ###FAQ / Deploy
@@ -88,7 +88,7 @@ Check the source code of the html/js/css generated files, you'll see a banner co
 
 PRs are welcome, just keep in mind this boilerplate aims to keep beeing framework agnostic.
 
-Everything related to contributing (tests, framework dependencies ...) is located in the [/contributing](https://github.com/topheman/webpack-babel-starter/tree/master/contributing) folder. Check the readme in their to see how to setup your workspace.
+Everything related to contributing (tests, framework dependencies ...) is located in the [/contributing](https://github.com/topheman/webpack-babel-starter/tree/master/contributing) folder. Check the readme in there to see how to setup your workspace.
 
 Copyright 2016 © Christophe Rosset
 
