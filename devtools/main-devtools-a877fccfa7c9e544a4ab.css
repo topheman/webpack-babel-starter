@@ -3,8 +3,8 @@
  * 
  * Webpack Babel Starter Kit
  * 
- * @version v0.1.0 - 04/03/2016
- * @revision #8b6e9a6 - https://github.com/topheman/webpack-babel-starter/tree/8b6e9a6d59b332c910bb1856ac034c476a844bbe
+ * @version v0.1.0 - 06/03/2016
+ * @revision #a4f52f9 - https://github.com/topheman/webpack-babel-starter/tree/a4f52f9c5a3b66c689c6ecc19c6ae174fd13a955
  * @author Christophe Rosset <tophe@topheman.com> (http://labs.topheman.com/)
  * @copyright 2016(c) Christophe Rosset <tophe@topheman.com> (http://labs.topheman.com/)
  * @license MIT

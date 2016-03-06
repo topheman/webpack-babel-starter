@@ -1,6 +1,6 @@
 ##Webpack Babel Starter - distribution version (gh-pages branch)
 
-This is the distribution version of [topheman/webpack-babel-starter](https://github.com/topheman/webpack-babel-starter) - v0.1.0 - [#8b6e9a6](https://github.com/topheman/webpack-babel-starter/tree/8b6e9a6d59b332c910bb1856ac034c476a844bbe).
+This is the distribution version of [topheman/webpack-babel-starter](https://github.com/topheman/webpack-babel-starter) - v0.1.0 - [#a4f52f9](https://github.com/topheman/webpack-babel-starter/tree/a4f52f9c5a3b66c689c6ecc19c6ae174fd13a955).
 
 **Warning**: This is the **generated** code, versionned on the `gh-pages` branch, testable online [here](https://topheman.github.io/webpack-babel-starter/). If you wish to see the original source code, switch to the [master branch](https://github.com/topheman/webpack-babel-starter).
 
@@ -23,3 +23,5 @@ You can disable the generation of this file by removing the following line in th
 ```js
 "postbuild-prod-all": "npm run generate-dist-readme"
 ```
+
+You can customize the output of this file, the template is located at `bin/README.dist.template.md`.
