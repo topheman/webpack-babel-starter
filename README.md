@@ -1,6 +1,6 @@
 ##Webpack Babel Starter - distribution version (gh-pages branch)
 
-This is the distribution version of [topheman/webpack-babel-starter](https://github.com/topheman/webpack-babel-starter) - v0.1.0 - [#a4f52f9](https://github.com/topheman/webpack-babel-starter/tree/a4f52f9c5a3b66c689c6ecc19c6ae174fd13a955).
+This is the distribution version of [topheman/webpack-babel-starter](https://github.com/topheman/webpack-babel-starter) - v0.2.0 - [#eb45763](https://github.com/topheman/webpack-babel-starter/tree/eb45763a891415ccbe1fe3dc502ea6f0f63f29cb).
 
 **Warning**: This is the **generated** code, versionned on the `gh-pages` branch, testable online [here](https://topheman.github.io/webpack-babel-starter/). If you wish to see the original source code, switch to the [master branch](https://github.com/topheman/webpack-babel-starter).
 
