@@ -1,6 +1,6 @@
 {
   "name": "webpack-babel-starter",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Webpack Babel Starter Kit",
   "scripts": {
     "start": "npm run webpack",
