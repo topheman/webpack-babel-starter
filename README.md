@@ -13,6 +13,10 @@ What's in this boilerplate:
 * Sass support
 * Ship a version of your site with sourcemaps (see demo)
 
+Already in use in the following projects:
+
+* [topheman/rxjs-experiments](https://github.com/topheman/rxjs-experiments)
+
 ###Install
 
 ```shell
