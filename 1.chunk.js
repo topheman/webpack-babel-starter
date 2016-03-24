@@ -3,8 +3,8 @@
  * 
  * Webpack Babel Starter Kit
  * 
- * @version v0.2.0 - 06/03/2016
- * @revision #eb45763 - https://github.com/topheman/webpack-babel-starter/tree/eb45763a891415ccbe1fe3dc502ea6f0f63f29cb
+ * @version v0.2.0 - 24/03/2016
+ * @revision #613f09e - https://github.com/topheman/webpack-babel-starter/tree/613f09ec569d044e932ee98c0534c005661accd6
  * @author Christophe Rosset <tophe@topheman.com> (http://labs.topheman.com/)
  * @copyright 2016(c) Christophe Rosset <tophe@topheman.com> (http://labs.topheman.com/)
  * @license MIT
@@ -32,4 +32,4 @@ webpackJsonp([1],{
 /***/ }
 
 });
-//# sourceMappingURL=1-devtools-a877fccfa7c9e544a4ab.chunk.js.map
+//# sourceMappingURL=1.chunk.js.map
