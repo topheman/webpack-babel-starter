@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
   <title><%= htmlWebpackPlugin.options.title %></title>
-<% if (!htmlWebpackPlugin.options.MODE_DEV_SERVER) { %><link href="<%= webpack.assetsByChunkName['main'][1] %>" rel="stylesheet"><% } %></head>
+  <% if (!htmlWebpackPlugin.options.MODE_DEV_SERVER) { %><link href="<%= webpack.assetsByChunkName['main'][1] %>" rel="stylesheet"><% } %>
 </head>
 <body class="babel">
 <!-- feel free to remove the following - except the script tags at the end -->
