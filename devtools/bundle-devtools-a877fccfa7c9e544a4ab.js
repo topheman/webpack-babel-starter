@@ -4,7 +4,7 @@
  * Webpack Babel Starter Kit
  * 
  * @version v0.2.0 - 24/03/2016
- * @revision #613f09e - https://github.com/topheman/webpack-babel-starter/tree/613f09ec569d044e932ee98c0534c005661accd6
+ * @revision #de8236c - https://github.com/topheman/webpack-babel-starter/tree/de8236c463c4bb62bdec4fdcc1ad805bcb402500
  * @author Christophe Rosset <tophe@topheman.com> (http://labs.topheman.com/)
  * @copyright 2016(c) Christophe Rosset <tophe@topheman.com> (http://labs.topheman.com/)
  * @license MIT
@@ -85,7 +85,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 /******/
-/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".chunk.js";
+/******/ 			script.src = __webpack_require__.p + "" + chunkId + "-devtools-" + "a877fccfa7c9e544a4ab" + ".chunk.js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};
@@ -116,14 +116,14 @@
 	 * The linter can be disabled via LINTER=false env var - show a message in console to inform if it's on or off
 	 * Won't show in production
 	 */
-	if (true) {
-	  if (false) {
+	if (false) {
+	  if (!process.env.LINTER) {
 	    console.warn('Linter disabled, make sure to run your code against the linter, otherwise, if it fails, your commit will be rejected.');
 	  } else {
 	    console.info('Linter active, if you meet some problems, you can still run without linter, just set the env var LINTER=false.');
 	  }
 	} else {
-	  if (process.env.DEVTOOLS) {
+	  if (true) {
 	    console.info('Turn on the "Sources" tab of your devtools to inspect original source code - thanks to sourcemaps!');
 	  }
 	}
@@ -375,7 +375,7 @@
 	var debugEnviron;
 	exports.debuglog = function(set) {
 	  if (isUndefined(debugEnviron))
-	    debugEnviron = ({"NODE_ENV":"development","DEVTOOLS":null,"LINTER":true}).NODE_DEBUG || '';
+	    debugEnviron = ({"NODE_ENV":"production","DEVTOOLS":true,"LINTER":true}).NODE_DEBUG || '';
 	  set = set.toUpperCase();
 	  if (!debugs[set]) {
 	    if (new RegExp('\\b' + set + '\\b', 'i').test(debugEnviron)) {
@@ -1380,4 +1380,4 @@
 
 /***/ }
 /******/ ]);
-//# sourceMappingURL=bundle.js.map
+//# sourceMappingURL=bundle-devtools-a877fccfa7c9e544a4ab.js.map
