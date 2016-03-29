@@ -15,7 +15,9 @@ What's in this boilerplate:
 
 Already in use in the following projects:
 
-* [topheman/rxjs-experiments](https://github.com/topheman/rxjs-experiments)
+* [topheman/rxjs-experiments](https://github.com/topheman/rxjs-experiments) (RxJS)
+* [topheman/react-es6-redux](https://github.com/topheman/react-es6-redux) (React/Redux/Github Api) - since [v3.0.0](https://github.com/topheman/react-es6-redux/releases/tag/v3.0.0) 
+* [topheman/d3-react-experiments](https://github.com/topheman/d3-react-experiments) (React/d3)
 
 ###Install
 
@@ -79,6 +81,7 @@ The main image loaders are declared in the webpack config so that when you `requ
 
 * deploy on github pages - [see wiki](https://github.com/topheman/webpack-babel-starter/wiki#deploy)
 * a problem ? Checkout the [FAQ](https://github.com/topheman/webpack-babel-starter/wiki#faq)
+* [Using React](https://github.com/topheman/webpack-babel-starter/wiki#react-hot-reload) ? Checkout how I integrated all the usual tools around React on some of my own projects, based on this boilerplate.
 
 ###Bonus
 
