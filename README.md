@@ -19,6 +19,8 @@ Already in use in the following projects:
 * [topheman/react-es6-redux](https://github.com/topheman/react-es6-redux) (React/Redux/Github Api) - since [v3.0.0](https://github.com/topheman/react-es6-redux/releases/tag/v3.0.0) 
 * [topheman/d3-react-experiments](https://github.com/topheman/d3-react-experiments) (React/d3)
 
+I also have ported it on [topheman/angular2-sandbox](https://github.com/topheman/angular2-sandbox) to be used the same way in an Angular2 / TypeScript project.
+
 ###Install
 
 ```shell
