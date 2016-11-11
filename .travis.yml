@@ -1,7 +1,7 @@
 language: node_js
 node_js:
-  - "4"
   - "5"
+  - "6"
 before_script:
   - npm ls --depth=0
   - npm run contributing-install #remove this line if you're not contributing - https://github.com/topheman/webpack-babel-starter/tree/master/contributing
