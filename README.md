@@ -21,7 +21,7 @@ Already in use in the following projects:
 
 I also have ported it on [topheman/angular2-sandbox](https://github.com/topheman/angular2-sandbox) to be used the same way in an Angular2 / TypeScript project.
 
-###Install
+### Install
 
 ```shell
 git clone https://github.com/topheman/webpack-babel-starter.git
@@ -29,7 +29,7 @@ cd webpack-babel-starter
 npm install
 ```
 
-###Run
+### Run
 
 ```shell
 npm start
@@ -39,7 +39,7 @@ Goto [http://localhost:8080](http://localhost:8080)
 
 If you need to access from a remote device (such as a smartphone on the same network), just `LOCALHOST=false npm start` and your site will be accessible via your IP (which will be output on the terminal at launch).
 
-###Build
+### Build
 
 The `./build` directory is ignored by git, it will contain a `dist` directory which holds the distribution version of your website (the one that you will [ship once built](https://github.com/topheman/webpack-babel-starter/wiki#deploy)).
 
@@ -53,13 +53,13 @@ All the build tasks will create a built version of the project in the `./build/d
 
 `npm run serve-dist` will serve your `./build/dist` folder at [http://localhost:3000](http://localhost:3000) so that you could test the built version you just made.
 
-###Linter
+### Linter
 
 * eslint is running while you're developping, check your console for errors
 * you can also launch it via `npm run lint`
 * see `.eslintrc` for the configuration (currently, this project uses [the airbnb presets](https://github.com/airbnb/javascript/tree/eslint-config-airbnb-v5.0.1/packages/eslint-config-airbnb) - if you find it to restrictive, just remove `"extends": "airbnb/base"` in the `.eslintrc`)
 
-###Customizations
+### Customizations
 
 You can customize the behavior of the scripts by specifying environments vars:
 
@@ -70,7 +70,7 @@ You can customize the behavior of the scripts by specifying environments vars:
 * `LOCALHOST=false` to access via IP from other devices on the same network (ex: `LOCALHOST=false npm start` - default `true`)
 * `DEVTOOLS`: By default at `null`. Used internally by `npm run build-prod-all` (you may not need that if you don't do OSS)
 
-###Assets
+### Assets
 
 The main image loaders are declared in the webpack config so that when you `require('./foo.png')` or use the helper `url('./bar.gif')` in your `.scss` files, at build time, those images will automatically be:
 
@@ -79,13 +79,13 @@ The main image loaders are declared in the webpack config so that when you `requ
 * the hashed name will only change if the file changes (caching & git friendly)
 * I made sure that the css supports relative urls (this is why `main.css` lands at the same level as `index.html`)
 
-###FAQ / Deploy
+### FAQ / Deploy
 
 * deploy on github pages - [see wiki](https://github.com/topheman/webpack-babel-starter/wiki#deploy)
 * a problem ? Checkout the [FAQ](https://github.com/topheman/webpack-babel-starter/wiki#faq)
 * [Using React](https://github.com/topheman/webpack-babel-starter/wiki#react-hot-reload) ? Checkout how I integrated all the usual tools around React on some of my own projects, based on this boilerplate.
 
-###Bonus
+### Bonus
 
 Check the source code of the html/js/css generated files, you'll see a banner containing informations such as:
 
@@ -93,7 +93,7 @@ Check the source code of the html/js/css generated files, you'll see a banner co
 * version
 * git revision / link to this revision on github
 
-###Contributing
+### Contributing
 
 PRs are welcome, just keep in mind this boilerplate aims to keep beeing framework agnostic.
 
