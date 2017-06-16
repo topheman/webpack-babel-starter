@@ -6,7 +6,9 @@
     "no-console": 0,
     "padded-blocks": 0,
     "indent": [2, 2, {"SwitchCase": 1}],
-    "spaced-comment": 1
+    "spaced-comment": 1,
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "import/prefer-default-export": "off"
   },
-  "extends": "airbnb/base"
+  "extends": "airbnb-base"
 }

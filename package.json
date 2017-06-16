@@ -7,6 +7,7 @@
     "start": "npm run webpack",
     "test": "npm run lint",
     "lint": "./node_modules/.bin/eslint src",
+    "lint-fix": "./node_modules/.bin/eslint --fix src --ext .js",
     "clean-dist": "node ./bin/clean-dist.js",
     "serve-build": "echo 'Serving distribution folder build/dist' && npm run serve-dist",
     "serve-dist": "./node_modules/.bin/serve build/dist",
@@ -44,16 +45,17 @@
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.5.2",
-    "babel-eslint": "^5.0.0",
+    "babel-eslint": "^7.2.3",
     "babel-loader": "^6.2.3",
     "babel-preset-es2015": "^6.5.0",
     "chai": "^4.0.2",
     "css-loader": "^0.23.1",
     "del": "^2.2.0",
-    "eslint": "^1.10.3",
-    "eslint-config-airbnb": "^5.0.1",
+    "eslint": "4",
+    "eslint-config-airbnb-base": "^11.2.0",
     "eslint-loader": "^1.3.0",
-    "eslint-plugin-react": "^3.16.1",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-react": "7",
     "extract-text-webpack-plugin": "2",
     "file-loader": "^0.8.5",
     "git-rev-sync": "^1.4.0",
@@ -72,6 +74,5 @@
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5"
   },
-  "private": true,
-  "dependencies": {}
+  "private": true
 }

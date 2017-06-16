@@ -13,10 +13,8 @@ if (process.env.NODE_ENV !== 'production') {
     console.info('Linter active, if you meet some problems, you can still run without linter, just set the env var LINTER=false.');
   }
 }
-else {
-  if (process.env.DEVTOOLS) {
-    console.info('Turn on the "Sources" tab of your devtools to inspect original source code - thanks to sourcemaps!');
-  }
+else if (process.env.DEVTOOLS) {
+  console.info('Turn on the "Sources" tab of your devtools to inspect original source code - thanks to sourcemaps!');
 }
 
 /**
@@ -35,11 +33,12 @@ if (process.env.DEVTOOLS && process.env.NODE_ENV !== 'production') {
 
 const main = () => {
   console.log('Welcome! More infos at https://github.com/topheman/webpack-babel-starter');
+  const { document } = global;
   // the following is nothing extraordinary ... just to show that the requiring of images work (as well from sass and require / direct and inlined)
-  if (global.document && global.document.querySelector) {
+  if (document && document.querySelector) {
 
     const testRequireEnsureLink = document.querySelector('.test-require-ensure');
-    const logo = document.querySelector('.logo');
+    const logo = global.document.querySelector('.logo');
 
     /** display logos */
     const cssClasses = ['babel', 'npm', 'eslint', 'sass'];
