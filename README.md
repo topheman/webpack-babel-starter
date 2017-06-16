@@ -26,7 +26,7 @@ I also have ported it on [topheman/angular2-sandbox](https://github.com/topheman
 ```shell
 git clone https://github.com/topheman/webpack-babel-starter.git
 cd webpack-babel-starter
-npm install
+yarn
 ```
 
 ### Run
