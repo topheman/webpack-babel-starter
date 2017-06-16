@@ -53,11 +53,13 @@ const main = () => {
 
     testRequireEnsureLink.addEventListener('click', () => {
       // the following won't be included in the original build but will be lazy loaded only when needed
-      require.ensure([], (require) => {
-        const toggleCssClassName = require('./scripts/css-utils.js').toggleCssClassName;
-        toggleCssClassName(logo, 'rotate');
-        toggleCssClassName(testRequireEnsureLink, 'active');
-      });
+      import('./scripts/css-utils.js')
+        .then(module => {
+          const { toggleCssClassName } = module;
+          toggleCssClassName(logo, 'rotate');
+          toggleCssClassName(testRequireEnsureLink, 'active');
+        })
+        .catch(error => console.error('Chunk loading failed', error));
     });
   }
 };

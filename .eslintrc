@@ -8,7 +8,8 @@
     "indent": [2, 2, {"SwitchCase": 1}],
     "spaced-comment": 1,
     "quotes": ["error", "single", { "allowTemplateLiterals": true }],
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "arrow-parens": ["error", "as-needed"]
   },
   "extends": "airbnb-base"
 }
