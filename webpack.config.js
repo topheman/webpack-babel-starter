@@ -53,14 +53,11 @@ if (!OPTIMIZE) {
 if (FAIL_ON_ERROR) {
   log.info('webpack', 'NoErrorsPlugin disabled, build will fail on error');
 }
-if (OPTIMIZE) {
-  log.info('webpack', 'OPTIMIZE: code will be compressed and deduped');
-}
 
 /** plugins setup */
 
 if(!FAIL_ON_ERROR) {
-  plugins.push(new webpack.NoErrorsPlugin());
+  plugins.push(new webpack.NoEmitOnErrorsPlugin());
 }
 
 plugins.push(new HtmlWebpackPlugin({
@@ -72,10 +69,12 @@ plugins.push(new HtmlWebpackPlugin({
   BANNER_HTML: BANNER_HTML
 }));
 // extract css into one main.css file
-plugins.push(new ExtractTextPlugin(`main${hash}.css`, {
+const extractSass = new ExtractTextPlugin({
+  filename: `main${hash}.css`,
   disable: false,
   allChunks: true
-}));
+});
+plugins.push(extractSass);
 plugins.push(new webpack.BannerPlugin(BANNER));
 plugins.push(new webpack.DefinePlugin({
   // Lots of library source code (like React) are based on process.env.NODE_ENV
@@ -89,11 +88,17 @@ plugins.push(new webpack.DefinePlugin({
 }));
 
 if (OPTIMIZE) {
-  plugins.push(new webpack.optimize.DedupePlugin());
   plugins.push(new webpack.optimize.UglifyJsPlugin({
     compress: {
       warnings: true
     }
+  }));
+}
+
+if (NODE_ENV !== 'production') {
+  // to keep compatibility with old loaders - debug: true was previously on config
+  plugins.push(new webpack.LoaderOptionsPlugin({
+    debug: true
   }));
 }
 
@@ -130,7 +135,8 @@ if (LINTER) {
   preLoaders.push({
     test: /\.js$/,
     exclude: /node_modules/,
-    loader: 'eslint-loader'
+    loader: 'eslint-loader',
+    enforce: 'pre'
   });
 }
 else {
@@ -149,36 +155,38 @@ const config = {
     publicPath: '',
     filename: `[name]${hash}.js`,
     chunkFilename: `[id]${hash}.chunk.js`,
-    path: BUILD_DIR + '/' + DIST_DIR
+    path: path.join(__dirname, BUILD_DIR, DIST_DIR)
   },
   cache: true,
-  debug: NODE_ENV === 'production' ? false : true,
   devtool: OPTIMIZE ? false : 'sourcemap',
   devServer: {
     host: LOCALHOST ? 'localhost' : myLocalIp()
   },
   module: {
-    preLoaders: preLoaders,
-    loaders: [
+    rules: [
+      ...preLoaders,
       {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
       },
       {
-        test: /\.json$/,
-        loader: 'json-loader'
-      },
-      {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style-loader',
-          'css-loader?sourceMap!sass-loader?sourceMap=true&sourceMapContents=true&outputStyle=expanded&' +
-          'includePaths[]=' + (path.resolve(__dirname, './node_modules'))
-        )
-      },
-      {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        use: extractSass.extract({
+          use: [{
+            loader: "css-loader",
+            query: JSON.stringify({
+              sourceMap: true
+            })
+          }, {
+            loader: "sass-loader",
+            query: JSON.stringify({
+              sourceMap: true
+            })
+          }],
+          // use style-loader in development
+          fallback: "style-loader"
+        })
       },
       { test: /\.(png)$/, loader: 'url-loader?limit=' + ASSETS_LIMIT + '&name=assets/[hash].[ext]' },
       { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=' + ASSETS_LIMIT + '&mimetype=application/font-woff&name=assets/[hash].[ext]' },
