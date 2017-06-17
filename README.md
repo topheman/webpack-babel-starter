@@ -100,7 +100,7 @@ Check the source code of the html/js/css generated files, you'll see a banner co
 
 PRs are welcome, just keep in mind this boilerplate aims to keep beeing framework agnostic.
 
-Everything related to contributing (tests, framework dependencies ...) is located in the [/contributing](https://github.com/topheman/webpack-babel-starter/tree/master/contributing) folder. Check the readme in there to see how to setup your workspace.
+Everything related to contributing (tests, framework dependencies ...) is located in the [/contributing](https://github.com/topheman/webpack-babel-starter/tree/v1/contributing) folder. Check the readme in there to see how to setup your workspace.
 
 Copyright 2016 © Christophe Rosset
 
