@@ -16,7 +16,7 @@ What's in this boilerplate:
 
 Already in use in the following projects:
 
-* [topheman/rxjs-experiments](https://github.com/topheman/rxjs-experiments) (RxJS) *(using v1)*
+* [topheman/rxjs-experiments](https://github.com/topheman/rxjs-experiments) (RxJS) *(switched to v2)*
 * [topheman/react-es6-redux](https://github.com/topheman/react-es6-redux) (React/Redux/Github Api) - since [v3.0.0](https://github.com/topheman/react-es6-redux/releases/tag/v3.0.0) *(using v1)*
 * [topheman/d3-react-experiments](https://github.com/topheman/d3-react-experiments) (React/d3) *(using v1)*
 
