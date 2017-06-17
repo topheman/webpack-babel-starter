@@ -13,7 +13,7 @@ function getInfos() {
   const pkg = require('./package.json');
   const infos = {
     pkg: pkg,
-    today: moment(new Date()).format('DD/MM/YYYY'),
+    today: moment(new Date()).format(),
     year: new Date().toISOString().substr(0, 4),
     gitRevisionShort: gitActive ? gitRev.short() : null,
     gitRevisionLong: gitActive ? gitRev.long() : null,

@@ -2,31 +2,44 @@ Webpack Babel Starter
 =====================
 
 [![Build Status](https://travis-ci.org/topheman/webpack-babel-starter.svg?branch=master)](https://travis-ci.org/topheman/webpack-babel-starter)
+![Release](https://img.shields.io/badge/release-v2-blue.svg)
 
-A webpack starter kit with full development & build workflow, inspired by [topheman/react-es6-redux](https://github.com/topheman/react-es6-redux).
+A **webpack 2** starter kit with full development & build workflow, inspired by [topheman/react-es6-redux](https://github.com/topheman/react-es6-redux).
 
 What's in this boilerplate:
 
 * Development / Build / Lint tasks
 * [Babel](https://babeljs.io/) transpiler
-* [Eslint](http://eslint.org/) / [babel-eslint](https://github.com/babel/babel-eslint) / [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/eslint-config-airbnb-v5.0.1/packages/eslint-config-airbnb)
+* [Eslint](http://eslint.org/) / [babel-eslint](https://github.com/babel/babel-eslint) / [eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base)
 * Sass support
 * Ship a version of your site with sourcemaps (see demo)
 
 Already in use in the following projects:
 
-* [topheman/rxjs-experiments](https://github.com/topheman/rxjs-experiments) (RxJS)
-* [topheman/react-es6-redux](https://github.com/topheman/react-es6-redux) (React/Redux/Github Api) - since [v3.0.0](https://github.com/topheman/react-es6-redux/releases/tag/v3.0.0) 
-* [topheman/d3-react-experiments](https://github.com/topheman/d3-react-experiments) (React/d3)
+* [topheman/rxjs-experiments](https://github.com/topheman/rxjs-experiments) (RxJS) *(using v1)*
+* [topheman/react-es6-redux](https://github.com/topheman/react-es6-redux) (React/Redux/Github Api) - since [v3.0.0](https://github.com/topheman/react-es6-redux/releases/tag/v3.0.0) *(using v1)*
+* [topheman/d3-react-experiments](https://github.com/topheman/d3-react-experiments) (React/d3) *(using v1)*
 
-I also have ported it on [topheman/angular2-sandbox](https://github.com/topheman/angular2-sandbox) to be used the same way in an Angular2 / TypeScript project.
+I also have ported it on [topheman/angular2-sandbox](https://github.com/topheman/angular2-sandbox) to be used the same way in an Angular2 / TypeScript project *(using v1)*.
+
+### v2
+
+This is the second version of this project, it now relies on [webpack2](https://webpack.js.org/). The workflow and the npm tasks remain exactly the same.
+
+If you were using the v1 with webpack1, the webpack team has [a migrating path](https://webpack.js.org/guides/migrating/). You can also see the steps I followed to migrate this stack from v1 to v2:
+
+* [setup yarn](https://github.com/topheman/webpack-babel-starter/commit/744efcc1b50c323799dec6555832e58d2c80bd6a) (unrelated to webpack)
+* [minimal changes for migration to webpack v2](https://github.com/topheman/webpack-babel-starter/commit/848884d7ea85d86b7e5e2a504fe30eeb4aad6568)
+* [upgrade eslint](https://github.com/topheman/webpack-babel-starter/commit/fa8d5d3eee6091d9e4dc0e9d97104947e04aa511)
+* [code splitting with `import()`](https://github.com/topheman/webpack-babel-starter/commit/41dc1e1ccb540cc6214a93731acb578d86093634)
+* [upgrade minor dependencies](https://github.com/topheman/webpack-babel-starter/commit/01d8ec53b49988dd39f88435fa91bd7e0444bce5)
 
 ### Install
 
 ```shell
 git clone https://github.com/topheman/webpack-babel-starter.git
 cd webpack-babel-starter
-npm install
+yarn
 ```
 
 ### Run
@@ -57,7 +70,7 @@ All the build tasks will create a built version of the project in the `./build/d
 
 * eslint is running while you're developping, check your console for errors
 * you can also launch it via `npm run lint`
-* see `.eslintrc` for the configuration (currently, this project uses [the airbnb presets](https://github.com/airbnb/javascript/tree/eslint-config-airbnb-v5.0.1/packages/eslint-config-airbnb) - if you find it to restrictive, just remove `"extends": "airbnb/base"` in the `.eslintrc`)
+* see `.eslintrc` for the configuration (currently, this project uses [the airbnb presets](https://www.npmjs.com/package/eslint-config-airbnb-base) - if you find it to restrictive, just remove `"extends": "airbnb-base"` in the `.eslintrc`)
 
 ### Customizations
 
