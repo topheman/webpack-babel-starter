@@ -1,7 +1,10 @@
 Webpack Babel Starter
 =====================
 
-[![Build Status](https://travis-ci.org/topheman/webpack-babel-starter.svg?branch=master)](https://travis-ci.org/topheman/webpack-babel-starter)
+[![Build Status](https://travis-ci.org/topheman/webpack-babel-starter.svg?branch=v1)](https://travis-ci.org/topheman/webpack-babel-starter)
+![Release](https://img.shields.io/badge/release-v1-blue.svg)
+
+**A new version relying on webpack 2 is now available!** [Check it out](https://github.com/topheman/webpack-babel-starter)
 
 A webpack starter kit with full development & build workflow, inspired by [topheman/react-es6-redux](https://github.com/topheman/react-es6-redux).
 

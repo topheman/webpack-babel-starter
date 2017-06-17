@@ -2,7 +2,7 @@ Webpack Babel Starter - Contributing
 ====================================
 Thanks for contributing!
 
-###If you're not a contributer
+### If you're not a contributer
 
 You can completly remove this folder (it only contains tests run on [travis](https://travis-ci.org/topheman/webpack-babel-starter) that ensure non regression of the boilerplate - nothing to do with your unit tests)
 
@@ -13,13 +13,13 @@ You can also remove the following lines in your `package.json` which won't be re
 "contributing-test": "./contributing/bin/contributing-test.sh"
 ```
 
-###Workspace setup
+### Workspace setup
 
 In order not to pollute the end-user's `package.json` with `devDependencies` like test/assertion framework, I didn't include anything in it.
 
 To install contributing dependencies: `npm run contributing-install`
 
-###Launch tests
+### Launch tests
 
 ```shell
 npm run contributing-test
