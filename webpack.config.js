@@ -171,7 +171,7 @@ const config = {
         loader: 'babel-loader'
       },
       {
-        test: /\.scss$/,
+        test: /\.(s)?css/,
         use: extractSass.extract({
           use: [{
             loader: "css-loader",
