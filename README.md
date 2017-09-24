@@ -22,9 +22,17 @@ Already in use in the following projects:
 
 I also have ported it on [topheman/angular2-sandbox](https://github.com/topheman/angular2-sandbox) to be used the same way in an Angular2 / TypeScript project *(using v1)*.
 
+This project is now at the v3. You should use the latest one - however, here is a light changelog to help you pick a previous one if you have some constaints:
+
+### v3
+
+* Dropped yarn.lock for npm@5 (you remain free to choose whatever package manager you want, the project is compatible with both yarn and npm).
+
 ### v2
 
-This is the second version of this project, it now relies on [webpack2](https://webpack.js.org/). The workflow and the npm tasks remain exactly the same.
+Still available on this [branch](https://github.com/topheman/webpack-babel-starter/tree/v2).
+
+Migrated to [webpack2](https://webpack.js.org/). The workflow and the npm tasks remain exactly the same.
 
 If you were using the v1 with webpack1, the webpack team has [a migrating path](https://webpack.js.org/guides/migrating/). You can also see the steps I followed to migrate this stack from v1 to v2:
 
@@ -112,7 +120,7 @@ PRs are welcome, just keep in mind this boilerplate aims to keep beeing framewor
 
 Everything related to contributing (tests, framework dependencies ...) is located in the [/contributing](https://github.com/topheman/webpack-babel-starter/tree/master/contributing) folder. Check the readme in there to see how to setup your workspace.
 
-Copyright 2016 © Christophe Rosset
+Copyright 2017 © Christophe Rosset
 
 > Permission is hereby granted, free of charge, to any person obtaining a copy of this software
 > and associated documentation files (the "Software"), to deal in the Software without

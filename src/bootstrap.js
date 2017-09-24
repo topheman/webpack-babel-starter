@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-/** This is how you use the environments variables passed by the webpack.DefinePlugin **/
+/* This is how you use the environments variables passed by the webpack.DefinePlugin */
 
 /**
  * The linter can be disabled via LINTER=false env var - show a message in console to inform if it's on or off
