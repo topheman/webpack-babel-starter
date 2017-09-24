@@ -9,14 +9,13 @@ You can completly remove this folder (it only contains tests run on [travis](htt
 You can also remove the following lines in your `package.json` which won't be relevant anymore:
 
 ```js
-"contributing-install": "./contributing/bin/contributing-install.sh",
 "contributing-test": "./contributing/bin/contributing-test.sh"
 ```
 
 The tests are relying on `mocha` and `chai`. If you don't use those dependencies yourself, you can remove them using :
 
 ```shell
-yarn remove mocha chai --dev
+npm remove mocha chai --dev
 ```
 
 ### Launch tests

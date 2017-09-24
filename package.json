@@ -19,7 +19,6 @@
     "webpack-build": "./node_modules/.bin/webpack --progress",
     "webpack-build-prod": "./node_modules/.bin/webpack --progress -p",
     "generate-dist-readme": "node bin/generate-dist-readme.js",
-    "contributing-install": "./contributing/bin/contributing-install.sh",
     "contributing-test": "./contributing/bin/contributing-test.sh"
   },
   "pre-commit": [
