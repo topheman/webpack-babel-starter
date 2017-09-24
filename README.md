@@ -2,7 +2,7 @@ Webpack Babel Starter
 =====================
 
 [![Build Status](https://travis-ci.org/topheman/webpack-babel-starter.svg?branch=master)](https://travis-ci.org/topheman/webpack-babel-starter)
-![Release](https://img.shields.io/badge/release-v2-blue.svg)
+![Release](https://img.shields.io/badge/release-v3-blue.svg)
 
 A **webpack 2** starter kit with full development & build workflow, inspired by [topheman/react-es6-redux](https://github.com/topheman/react-es6-redux).
 
@@ -22,32 +22,12 @@ Already in use in the following projects:
 
 I also have ported it on [topheman/angular2-sandbox](https://github.com/topheman/angular2-sandbox) to be used the same way in an Angular2 / TypeScript project *(using v1)*.
 
-This project is now at the v3. You should use the latest one - however, here is a light changelog to help you pick a previous one if you have some constaints:
-
-### v3
-
-* Dropped yarn.lock for npm@5 (you remain free to choose whatever package manager you want, the project is compatible with both yarn and npm).
-
-### v2
-
-Still available on this [branch](https://github.com/topheman/webpack-babel-starter/tree/v2).
-
-Migrated to [webpack2](https://webpack.js.org/). The workflow and the npm tasks remain exactly the same.
-
-If you were using the v1 with webpack1, the webpack team has [a migrating path](https://webpack.js.org/guides/migrating/). You can also see the steps I followed to migrate this stack from v1 to v2:
-
-* [setup yarn](https://github.com/topheman/webpack-babel-starter/commit/744efcc1b50c323799dec6555832e58d2c80bd6a) (unrelated to webpack)
-* [minimal changes for migration to webpack v2](https://github.com/topheman/webpack-babel-starter/commit/848884d7ea85d86b7e5e2a504fe30eeb4aad6568)
-* [upgrade eslint](https://github.com/topheman/webpack-babel-starter/commit/fa8d5d3eee6091d9e4dc0e9d97104947e04aa511)
-* [code splitting with `import()`](https://github.com/topheman/webpack-babel-starter/commit/41dc1e1ccb540cc6214a93731acb578d86093634)
-* [upgrade minor dependencies](https://github.com/topheman/webpack-babel-starter/commit/01d8ec53b49988dd39f88435fa91bd7e0444bce5)
-
 ### Install
 
 ```shell
 git clone https://github.com/topheman/webpack-babel-starter.git
 cd webpack-babel-starter
-yarn
+npm install
 ```
 
 ### Run
@@ -119,6 +99,32 @@ Check the source code of the html/js/css generated files, you'll see a banner co
 PRs are welcome, just keep in mind this boilerplate aims to keep beeing framework agnostic.
 
 Everything related to contributing (tests, framework dependencies ...) is located in the [/contributing](https://github.com/topheman/webpack-babel-starter/tree/master/contributing) folder. Check the readme in there to see how to setup your workspace.
+
+### Versions
+
+#### v3 (current)
+
+* Dropped yarn for npm@5 (you remain free to choose whatever package manager you want, the project is compatible with both yarn and npm).
+
+#### v2
+
+Still available on this [branch](https://github.com/topheman/webpack-babel-starter/tree/v2).
+
+Migrated to [webpack2](https://webpack.js.org/). The workflow and the npm tasks remain exactly the same.
+
+If you were using the v1 with webpack1, the webpack team has [a migrating path](https://webpack.js.org/guides/migrating/). You can also see the steps I followed to migrate this stack from v1 to v2:
+
+* [setup yarn](https://github.com/topheman/webpack-babel-starter/commit/744efcc1b50c323799dec6555832e58d2c80bd6a) (unrelated to webpack)
+* [minimal changes for migration to webpack v2](https://github.com/topheman/webpack-babel-starter/commit/848884d7ea85d86b7e5e2a504fe30eeb4aad6568)
+* [upgrade eslint](https://github.com/topheman/webpack-babel-starter/commit/fa8d5d3eee6091d9e4dc0e9d97104947e04aa511)
+* [code splitting with `import()`](https://github.com/topheman/webpack-babel-starter/commit/41dc1e1ccb540cc6214a93731acb578d86093634)
+* [upgrade minor dependencies](https://github.com/topheman/webpack-babel-starter/commit/01d8ec53b49988dd39f88435fa91bd7e0444bce5)
+
+#### v1
+
+Still available on this [branch](https://github.com/topheman/webpack-babel-starter/tree/v1).
+
+First version, using webpack1.
 
 Copyright 2017 © Christophe Rosset
 
